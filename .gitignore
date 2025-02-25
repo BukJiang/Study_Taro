@@ -1,0 +1,7 @@
+dist/
+node_modules/
+deploy_versions/
+.temp/
+.rn_temp/
+.DS_Store
+.swc

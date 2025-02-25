@@ -1,0 +1,85 @@
+/* 混合 */
+
+
+// Flex 布局
+.flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column() {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column-center() {
+    .flex-column();
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row() {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-row-center() {
+    .flex-row();
+    justify-content: center;
+    align-items: center;
+}
+
+
+// 文本截断
+.text-ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+// active
+.active_opacity(@opacity: 0.6) {
+    transition: opacity 0.3s;
+    
+    &:active {
+        opacity: @opacity;
+    }
+}
+
+
+// 盒阴影
+.box-shadow(@shadow: 0 2px 4px rgba(0, 0, 0, 0.1)) {
+    box-shadow: @shadow;
+}
+
+
+// 清除浮动
+.clearfix() {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+// 响应式断点
+.media-mobile(@rules) {
+    @media (max-width: 767px) {
+        @rules()
+    }
+}
+
+.media-tablet(@rules) {
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @rules()
+    }
+}
+
+.media-desktop(@rules) {
+    @media (min-width: 1025px) {
+        @rules()
+    }
+}
